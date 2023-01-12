@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.newsAppi.getAllNews().subscribe((res: any) => {
-      console.log(res);
       this.sources = res.articles;
     });
   }
