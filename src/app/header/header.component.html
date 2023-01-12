@@ -29,11 +29,12 @@
       class="sm:container mx-auto flex justify-between items-center h-14 px-4 sm:px-0 text-sm font-semibold"
     >
       <ul
-        class="hidden lg:flex w-full justify-between items-center h-14 px-4 sm:px-0 text-sm font-semibold"
+        class="lg:flex hidden w-full justify-between items-center px-4 sm:px-0 text-sm font-semibold"
+        [class.is-open]="isMenuOpen"
       >
-        <li *ngFor="let navItem of navItems">
+        <li *ngFor="let navItem of navItems" class="flex gap-y-6 lg:gap-y-0">
           <a
-            class="hover:bg-secondary hover:rounded-md px-4 py-2"
+            class="hover:bg-secondary hover:rounded-md px-4 py-2 my-1 md:my-2 lg:my-0"
             routerLinkActive="active-link"
             routerLink="{{ navItem.path }}"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -41,9 +42,12 @@
           </a>
         </li>
       </ul>
-      <button class="lg:hidden inline-block">
+      <button class="lg:hidden inline-block" (click)="toggleMenu()">
+        <!-- <i class="fa-solid fa-xmark"></i> -->
+
         <i
-          class="fa-solid fa-bars text-xl md:text-2xl hover:text-primary transition-all"
+          [ngClass]="[isMenuOpen ? 'fa-xmark' : 'fa-bars']"
+          class="fa-solid fa-bars text-2xl md:text-3xl hover:text-primary transition-all"
         ></i>
       </button>
     </div>

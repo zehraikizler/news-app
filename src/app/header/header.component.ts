@@ -17,4 +17,12 @@ export class HeaderComponent {
     { text: 'TECHNOLOGY', path: 'technology' },
     { text: 'ABOUT', path: 'about' },
   ];
+
+  public isMenuOpen: boolean = false;
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+
+    console.log(this.isMenuOpen);
+  }
 }
