@@ -17,6 +17,4 @@ export class HomeComponent implements OnInit {
       this.sources = res.articles;
     });
   }
-
-  getSources() {}
 }

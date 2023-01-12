@@ -21,6 +21,4 @@ export class CategoriesComponent implements OnInit {
         this.sources = res.articles;
       });
   }
-
-  getSources() {}
 }

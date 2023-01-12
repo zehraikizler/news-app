@@ -7,7 +7,7 @@
       class="container mx-auto flex flex-col lg:flex-row gap-y-4 justify-between lg:items-center py-3"
     >
       <div class="font-dancing text-3xl mt-4 lg:mt-0 cursor-pointer">
-        Zehra İkizler
+        <a routerLink="">Zehra İkizler</a>
       </div>
       <div class="flex gap-x-2">
         <input
@@ -31,50 +31,14 @@
       <ul
         class="hidden lg:flex w-full justify-between items-center h-14 px-4 sm:px-0 text-sm font-semibold"
       >
-        <li
-          class="cursor-pointer hover:bg-secondary hover:rounded-md px-4 py-2 active-link"
-        >
-          <a routerLink="">HOME</a>
-        </li>
-        <li
-          class="cursor-pointer hover:bg-secondary hover:rounded-md px-4 py-2"
-        >
-          <a routerLink="business">BUSINESS</a>
-        </li>
-        <li
-          class="cursor-pointer hover:bg-secondary hover:rounded-md px-4 py-2"
-        >
-          <a routerLink="entertainment">ENTERTAINMENT</a>
-        </li>
-        <li
-          class="cursor-pointer hover:bg-secondary hover:rounded-md px-4 py-2"
-        >
-          <a routerLink="general">GENERAL</a>
-        </li>
-        <li
-          class="cursor-pointer hover:bg-secondary hover:rounded-md px-4 py-2"
-        >
-          <a routerLink="health">HEALTH</a>
-        </li>
-        <li
-          class="cursor-pointer hover:bg-secondary hover:rounded-md px-4 py-2"
-        >
-          <a routerLink="science">SCIENCE</a>
-        </li>
-        <li
-          class="cursor-pointer hover:bg-secondary hover:rounded-md px-4 py-2"
-        >
-          <a routerLink="sports">SPORTS</a>
-        </li>
-        <li
-          class="cursor-pointer hover:bg-secondary hover:rounded-md px-4 py-2"
-        >
-          <a routerLink="technology">TECHNOLOGY</a>
-        </li>
-        <li
-          class="cursor-pointer hover:bg-secondary hover:rounded-md px-4 py-2"
-        >
-          <a routerLink="about">ABOUT</a>
+        <li *ngFor="let navItem of navItems">
+          <a
+            class="hover:bg-secondary hover:rounded-md px-4 py-2"
+            routerLinkActive="active-link"
+            routerLink="{{ navItem.path }}"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >{{ navItem.text }}
+          </a>
         </li>
       </ul>
       <button class="lg:hidden inline-block">
