@@ -1,3 +1,5 @@
-<div class="min-h-[calc(100vh_-_210px)]">
-  <p>home works!</p>
+<div class="min-h-[calc(100vh_-_210px)] md:container md:mx-auto mx-6">
+  <app-slider></app-slider>
+  <div>{{ sources.totalResults }}</div>
+  <app-card *ngFor="let source of sources" [source]="source"></app-card>
 </div>

@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../service/news.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  public sources: any = [];
+  public category: any = [];
 
+  constructor(private newsAppi: NewsService) {}
+
+  ngOnInit(): void {
+    this.newsAppi.getAllNews().subscribe((res: any) => {
+      console.log(res);
+      this.sources = res.articles;
+    });
+  }
+
+  getSources() {}
 }

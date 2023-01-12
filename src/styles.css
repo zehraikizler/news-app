@@ -4,3 +4,7 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+.detail-btn {
+  @apply border border-primary text-primary w-24 px-[22px] py-[6px] rounded-3xl cursor-pointer hover:bg-primary hover:text-white transition-all;
+}
