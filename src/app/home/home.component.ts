@@ -8,13 +8,14 @@ import { NewsService } from '../service/news.service';
 })
 export class HomeComponent implements OnInit {
   public sources: any = [];
-  public category: any = [];
+  public totalResults: any;
 
   constructor(private newsAppi: NewsService) {}
 
   ngOnInit(): void {
     this.newsAppi.getAllNews().subscribe((res: any) => {
       this.sources = res.articles;
+      this.totalResults = res.totalResults;
     });
   }
 }
