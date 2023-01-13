@@ -10,10 +10,10 @@ export class HomeComponent implements OnInit {
   public sources: any = [];
   public totalResults: any;
 
-  constructor(private newsAppi: NewsService) {}
+  constructor(private newsApi: NewsService) {}
 
   ngOnInit(): void {
-    this.newsAppi.getAllNews().subscribe((res: any) => {
+    this.newsApi.getAllNews().subscribe((res: any) => {
       this.sources = res.articles;
       this.totalResults = res.totalResults;
     });

@@ -22,4 +22,12 @@ export class NewsService {
         this.api_key
     );
   }
+
+  getUser() {
+    return this.http.get('https://api.github.com/users/zehraikizler');
+  }
+
+  getUserRepos() {
+    return this.http.get('https://api.github.com/users/zehraikizler/repos');
+  }
 }
