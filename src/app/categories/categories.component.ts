@@ -24,7 +24,6 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
     this.routeName = this.router.url.split('/')[1];
     this.activatedRoute.queryParams.subscribe((params) => {
-      console.log(params);
       if (params['q']) {
         this.newsAppi
           .getNewsBySearchCategoryQuery(

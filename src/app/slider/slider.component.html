@@ -3,32 +3,100 @@
   class="carousel slide relative"
   data-bs-ride="carousel"
 >
-  <div
-    class="carousel-inner relative w-full overflow-hidden"
-    *ngFor="let source of sources"
-  >
-    <div class="carousel-item relative float-left w-full active">
+  <div class="carousel-inner relative w-full overflow-hidden">
+    <div class="carousel-item relative float-left w-full">
       <div class="flex flex-col bg-slate-50 rounded-md lg:mt-0 mt-10">
         <div class="flex justify-center m-6">
-          <img src="{{ source.urlToImage }}" alt="" width="1000" />
+          <img
+            src="{{ sliderSourcesOne.urlToImage }}"
+            alt=""
+            width="1000"
+            height="1200"
+            height="1200"
+          />
         </div>
 
         <div class="flex flex-col px-8 md:px-20 py-4">
-          <h4 class="font-bold">
-            {{ source.title }}
+          <h4 class="font-bold px-4 md:px-0">
+            {{ sliderSourcesOne.title }}
           </h4>
-          <p class="text-sm leading-relaxed my-3">
-            {{ source.description }}
+          <p class="text-sm leading-relaxed my-3 px-4 md:px-0">
+            {{ sliderSourcesOne.description }}
           </p>
           <div class="flex justify-between my-4">
             <p class="flex gap-x-1 text-sm">
-              <span class="font-bold">{{ source.author }}</span>
+              <span class="font-bold">{{ sliderSourcesOne.author }}</span>
               <span>in</span>
               <span class="font-bold">News</span>
             </p>
             <small
               class="text-gray-400 overflow-hidden whitespace-nowrap w-[70px] tracking-wide"
-              >{{ source.publishedAt }}</small
+              >{{ sliderSourcesOne.publishedAt }}</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item relative float-left w-full">
+      <div class="flex flex-col bg-slate-50 rounded-md lg:mt-0 mt-10">
+        <div class="flex justify-center m-6">
+          <img
+            src="{{ sliderSourcesTwo.urlToImage }}"
+            alt=""
+            width="1000"
+            height="1200"
+          />
+        </div>
+
+        <div class="flex flex-col px-8 md:px-20 py-4">
+          <h4 class="font-bold px-4 md:px-0">
+            {{ sliderSourcesTwo.title }}
+          </h4>
+          <p class="text-sm leading-relaxed my-3 px-4 md:px-0">
+            {{ sliderSourcesTwo.description }}
+          </p>
+          <div class="flex justify-between my-4">
+            <p class="flex gap-x-1 text-sm">
+              <span class="font-bold">{{ sliderSourcesTwo.author }}</span>
+              <span>in</span>
+              <span class="font-bold">News</span>
+            </p>
+            <small
+              class="text-gray-400 overflow-hidden whitespace-nowrap w-[70px] tracking-wide"
+              >{{ sliderSourcesTwo.publishedAt }}</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item relative float-left w-full active">
+      <div class="flex flex-col bg-slate-50 rounded-md lg:mt-0 mt-10">
+        <div class="flex justify-center m-6">
+          <img
+            src="{{ sliderSourcesThree.urlToImage }}"
+            alt=""
+            width="1000"
+            height="1200"
+            height="1200"
+          />
+        </div>
+
+        <div class="flex flex-col px-8 md:px-20 py-4">
+          <h4 class="font-bold px-4 md:px-0">
+            {{ sliderSourcesThree.title }}
+          </h4>
+          <p class="text-sm leading-relaxed my-3 px-4 md:px-0">
+            {{ sliderSourcesThree.description }}
+          </p>
+          <div class="flex justify-between my-4">
+            <p class="flex gap-x-1 text-sm">
+              <span class="font-bold">{{ sliderSourcesThree.author }}</span>
+              <span>in</span>
+              <span class="font-bold">News</span>
+            </p>
+            <small
+              class="text-gray-400 overflow-hidden whitespace-nowrap w-[70px] tracking-wide"
+              >{{ sliderSourcesThree.publishedAt }}</small
             >
           </div>
         </div>
@@ -42,7 +110,7 @@
     data-bs-slide="prev"
   >
     <span
-      class="carousel-control-prev-icon inline-block bg-no-repeat mr-28 bg-gray-400 rounded-full"
+      class="carousel-control-prev-icon inline-block bg-no-repeat mt-96 lg:mt-0 mr-8 md:mr-12 lg:mr-28 bg-gray-400 rounded-full"
       aria-hidden="true"
     ></span>
     <span class="visually-hidden">Previous</span>
@@ -54,7 +122,7 @@
     data-bs-slide="next"
   >
     <span
-      class="carousel-control-next-icon inline-block bg-no-repeat ml-28 bg-gray-400 rounded-full"
+      class="carousel-control-next-icon inline-block bg-no-repeat mt-96 lg:mt-0 ml-8 md:ml-12 lg:ml-28 bg-gray-400 rounded-full"
       aria-hidden="true"
     ></span>
     <span class="visually-hidden">Next</span>

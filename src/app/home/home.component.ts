@@ -12,7 +12,6 @@ export class HomeComponent implements OnInit {
   collection: any = [];
 
   public sources: any = [];
-  public totalResults: any;
 
   constructor(
     private newsApi: NewsService,
@@ -23,18 +22,21 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.newsApi.getAllNews().subscribe((res: any) => {
       this.sources = res.articles;
-      this.totalResults = res.totalResults;
       this.sources.splice(0, 3);
     });
 
     this.activatedRoute.queryParams.subscribe((params) => {
-      console.log(params);
       if (params['q']) {
         this.newsAppi
           .getNewsBySearchAllQuery(params['q'])
           .subscribe((res: any) => {
             this.sources = res.articles;
           });
+      } else {
+        this.newsApi.getAllNews().subscribe((res: any) => {
+          this.sources = res.articles;
+          this.sources.splice(0, 3);
+        });
       }
     });
   }
