@@ -8,6 +8,9 @@ import { NewsService } from '../service/news.service';
   styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent implements OnInit {
+  p: number = 1;
+  collection: any = [];
+
   public sources: any = [];
   public category: any = [];
 
