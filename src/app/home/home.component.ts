@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     this.newsApi.getAllNews().subscribe((res: any) => {
       this.sources = res.articles;
       this.totalResults = res.totalResults;
+      this.sources.splice(0, 3);
     });
   }
 }

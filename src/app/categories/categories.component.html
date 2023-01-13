@@ -1,4 +1,8 @@
 <div class="md:container md:mx-auto mx-6">
+  <p class="ml-2 text-xs mt-10 mb-2">CATEGORIES</p>
+  <h4 class="font-bold uppercase ml-2 underline text-xl">
+    {{ routeName }}
+  </h4>
   <app-card
     *ngFor="
       let source of sources | paginate : { itemsPerPage: 10, currentPage: p }

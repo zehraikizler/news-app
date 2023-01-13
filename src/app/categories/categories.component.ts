@@ -10,6 +10,7 @@ import { NewsService } from '../service/news.service';
 export class CategoriesComponent implements OnInit {
   p: number = 1;
   collection: any = [];
+  routeName: any;
 
   public sources: any = [];
   public category: any = [];
@@ -17,9 +18,9 @@ export class CategoriesComponent implements OnInit {
   constructor(private newsAppi: NewsService, private router: Router) {}
 
   ngOnInit(): void {
-    let routeName = this.router.url.split('/')[1];
+    this.routeName = this.router.url.split('/')[1];
     this.newsAppi
-      .getArticlesByCategory((this.category = routeName))
+      .getArticlesByCategory((this.category = this.routeName))
       .subscribe((res: any) => {
         this.sources = res.articles;
       });
