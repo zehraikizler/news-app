@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class NewsService {
-  api_key = '2b81decb9bf44867a8bc9ff240061fdb';
+  api_key = '676f017549224f488970f1835f9db971';
   constructor(private http: HttpClient) {}
 
   getAllNews() {
@@ -29,5 +29,25 @@ export class NewsService {
 
   getUserRepos() {
     return this.http.get('https://api.github.com/users/zehraikizler/repos');
+  }
+
+  getNewsBySearchAllQuery(q: string) {
+    return this.http.get(
+      'https://newsapi.org/v2/top-headlines?country=tr&q=' +
+        q +
+        '&apiKey=' +
+        this.api_key
+    );
+  }
+
+  getNewsBySearchCategoryQuery(category: string, q: string) {
+    return this.http.get(
+      'https://newsapi.org/v2/top-headlines?country=tr&q=' +
+        q +
+        '&category=' +
+        category +
+        '&apiKey=' +
+        this.api_key
+    );
   }
 }

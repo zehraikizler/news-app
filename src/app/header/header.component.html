@@ -13,6 +13,8 @@
         <input
           class="lg:bg-secondary border border-secondary rounded-3xl px-4 py-1 focus:outline-none shadow-md text-gray-900"
           placeholder="Search..."
+          (value)="(searchQuery)"
+          (input)="onInput($event)"
         />
         <button
           class="lg:bg-secondary bg-primary text-secondary lg:text-gray-900 rounded-3xl py-1 px-3 shadow-md"
@@ -43,8 +45,6 @@
         </li>
       </ul>
       <button class="lg:hidden inline-block" (click)="toggleMenu()">
-        <!-- <i class="fa-solid fa-xmark"></i> -->
-
         <i
           [ngClass]="[isMenuOpen ? 'fa-xmark' : 'fa-bars']"
           class="fa-solid fa-bars text-2xl md:text-3xl hover:text-primary transition-all"

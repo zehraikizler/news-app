@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -19,10 +20,22 @@ export class HeaderComponent {
   ];
 
   public isMenuOpen: boolean = false;
+  public searchQuery: String = '';
+
+  onInput($event: any): void {
+    this.searchQuery = $event.target.value;
+    this.router.navigate([], {
+      relativeTo: this.activatedRoute,
+      queryParams: { q: $event.target.value ? $event.target.value : null },
+      queryParamsHandling: 'merge',
+    });
+  }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
 
     console.log(this.isMenuOpen);
   }
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 }
