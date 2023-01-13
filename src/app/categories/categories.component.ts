@@ -34,6 +34,12 @@ export class CategoriesComponent implements OnInit {
           .subscribe((res: any) => {
             this.sources = res.articles;
           });
+      } else {
+        this.newsAppi
+          .getArticlesByCategory((this.category = this.routeName))
+          .subscribe((res: any) => {
+            this.sources = res.articles;
+          });
       }
     });
     this.newsAppi
