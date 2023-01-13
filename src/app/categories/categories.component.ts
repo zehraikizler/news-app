@@ -8,6 +8,7 @@ import { NewsService } from '../service/news.service';
   styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent implements OnInit {
+  public loading = false;
   p: number = 1;
   collection: any = [];
   routeName: any;
@@ -22,6 +23,7 @@ export class CategoriesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.loading = true;
     this.routeName = this.router.url.split('/')[1];
     this.activatedRoute.queryParams.subscribe((params) => {
       if (params['q']) {
@@ -31,12 +33,14 @@ export class CategoriesComponent implements OnInit {
             params['q']
           )
           .subscribe((res: any) => {
+            this.loading = false;
             this.sources = res.articles;
           });
       } else {
         this.newsAppi
           .getArticlesByCategory((this.category = this.routeName))
           .subscribe((res: any) => {
+            this.loading = false;
             this.sources = res.articles;
           });
       }
@@ -44,6 +48,7 @@ export class CategoriesComponent implements OnInit {
     this.newsAppi
       .getArticlesByCategory((this.category = this.routeName))
       .subscribe((res: any) => {
+        this.loading = false;
         this.sources = res.articles;
       });
   }

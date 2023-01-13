@@ -9,4 +9,12 @@
   <div class="flex justify-center mb-20 mt-10">
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
+
+  <ngx-loading
+    [show]="loading"
+    [config]="{
+      backdropBorderRadius: '3px',
+      backdropBackgroundColour: 'rgba(0, 0, 0)'
+    }"
+  ></ngx-loading>
 </div>

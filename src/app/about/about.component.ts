@@ -7,16 +7,20 @@ import { NewsService } from '../service/news.service';
   styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
+  public loading = false;
   user: any = [];
   repos: any = [];
 
   constructor(private newsApi: NewsService) {}
 
   ngOnInit(): void {
+    this.loading = true;
     this.newsApi.getUser().subscribe((res: any) => {
+      this.loading = false;
       this.user = res;
     });
     this.newsApi.getUserRepos().subscribe((res: any) => {
+      this.loading = false;
       this.repos = res;
     });
   }
